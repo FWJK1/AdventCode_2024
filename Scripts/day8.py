@@ -65,17 +65,17 @@ anti_nodes, all_anti_nodes = set(), set()
 for key, vals in node_dict.items():
     pairs = list(combinations(vals, 2)) ## get every combo (order does not matter) 
     for (pos1, pos2) in pairs:
-        for node in get_antinode_positions(pos1, pos2):
-            anti_nodes.add(node)
-        for node in get_all_antinode_positions(pos1, pos2):
-            all_anti_nodes.add(node)
+       anti_nodes.update(get_antinode_positions(pos1, pos2))
+       all_anti_nodes.update(get_all_antinode_positions(pos1, pos2))
 
 
 # debug block to print the datamap again with antinode chars
 for node in all_anti_nodes:
     row = node[0]
     col =  node[1]
-    data[row, col] = '#'
+    pos = data[row, col]
+    if pos == '.' : 
+        data[row, col] = '#'
 
 for line in data:
     print(''.join(line))
