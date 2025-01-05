@@ -74,7 +74,6 @@ for j in range(len(positions)-1, 0, -1):
     ## debug print block ## 
     # results = [position[2] if position[0] else '.' for position in positions for _ in range(position[1])]
     # print(''.join(str(result) for result in results))
-    ##
 
     to_empty = positions[j]
     for i in range(0, j):
@@ -102,6 +101,6 @@ val =  0
 for i, num in enumerate(nums):
     val += (i * num)
 
-print(f"The better answer is {val}")
+print(f"The better answer is {val}")    
 
 
