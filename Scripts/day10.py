@@ -38,7 +38,7 @@ direction_dict = {
 
 ## we return a set of the ones that are in bounds so that we don't have to worry about duplicates ## 
 def check_connected(pos, goal, direction_dict=direction_dict):
-    if data[pos] == 9: ## we reached the goal and can return the position
+    if data[pos] == 9: ## we reached the goal and can return the position (as a set)
         return {pos}
     else:
 
