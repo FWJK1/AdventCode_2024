@@ -81,4 +81,4 @@ for line in data:
     print(''.join(line))
 
 print(f"There are {len(anti_nodes)} anti-node positions, naively.")
-print(f"There are {len(all_anti_nodes)} anti-node positions in all.")
+print(f"There are {len(all_anti_nodes)} anti-node positions in all.")        

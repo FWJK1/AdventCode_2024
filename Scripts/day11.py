@@ -71,7 +71,7 @@ but this isnt fast enough, so we look again and notice that really
 order DOESNT matter. just frequency! so we can work with a dict instead of a list ....
 but it has to be a default dict because we need to add right into it.
 
-This works very very fast.
+This works very fast.
 """
 
 ## reworked helper func to convert a number into the first and second halves.
