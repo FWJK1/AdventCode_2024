@@ -38,6 +38,9 @@ direction_dict = {
     'left' : (0, -1)
 }
 ## Part 2 ## 
+""""
+This one is tricky until we see that 'sides' = corners, if we define corners properly.
+"""
 
 ## find out how many corners=sides a list of positions (contiguous plant area) has 
 ######  eg ## 
