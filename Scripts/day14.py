@@ -21,6 +21,7 @@ def import_data(filepath):
 data = import_data("Inputs/day14_input.txt")
 WIDTH = 101
 HEIGHT = 103
+
 NUM_ROBITS = len(data)
 
 
@@ -55,11 +56,8 @@ def move_robits(data):
 
 ## perform as many moves as we need to
 def iterate_moves(data, itt_count):
-    # print(grid_rep(data))
-    for i in range(itt_count):
-        # print(f"\n\niteration {i+1}")
+    for _ in range(itt_count):
         data = move_robits(data)
-        # print(grid_rep(data))
     return data
 
 def score_data(data):
@@ -76,8 +74,7 @@ def score_data(data):
         grid[split_y:, :split_x],  # Bottom-left
         grid[split_y:, split_x:]   # Bottom-right
     ]
-    score = np.prod([np.sum(grid) for grid in grids])
-    return score
+    return np.prod([np.sum(grid) for grid in grids])
 
 data_100 = iterate_moves(data, 100)
 naive_score = score_data(data_100)
@@ -99,10 +96,10 @@ Uhh. I'm probably just going to use my eyes for this one
  We can do this by checking if a frame has less than say 95% of robots present
  (becuase hte ohters ones are on the same sqaures...?)
  
- I see some stuff but nothing leaps out to me. 
- We do notice it repeats every 11000 frames or so
+ With this, I see some stuff but nothing leaps out to me. 
+ I  do notice it repeats every 11000 frames or so
 
- We also notice that there are 'colasecing' frames... we
+ I also notice that there are 'colasecing' frames... we
  want only to look at these --where most of the pixels
  are in one general spot... we can look at this by looking 
  for lines that have far more than the avg amount of pixels
